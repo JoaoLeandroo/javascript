@@ -14,3 +14,4 @@ let falso = false
 const c = 'valor fixo'
 const num3 = 15
 const booleano = true
+const booleano2 = false
