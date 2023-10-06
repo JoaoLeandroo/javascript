@@ -5,3 +5,8 @@ const soma = numeros.reduce(function(acumulador, numero) {
 }, 0);
 
 console.log(soma);
+
+
+const calcularNumerosTabela = [10, 6, 2, 9, 6, 6]
+const newSomador = calcularNumerosTabela.reduce((acul, num) => {return acul + num})
+console.log(newSomador)
