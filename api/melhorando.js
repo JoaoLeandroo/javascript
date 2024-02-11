@@ -8,6 +8,8 @@ async function loadApi(url) {
     }
     catch(error) {
         console.log("ERRO AO CARREGAR API " + error)
+    }finally{
+        console.log("Fim da execução")
     }
 }
 
