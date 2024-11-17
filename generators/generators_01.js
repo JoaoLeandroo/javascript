@@ -10,3 +10,5 @@ const teste = testeGenerator()
 
 // next chama a função para ser executada
 teste.next()
+console.log("----------------")
+console.log(teste.next()) // vai executar o resto do codigo
