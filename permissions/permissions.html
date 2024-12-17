@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" class="input" />
+      <button class="btn">Enviar</button>
+    </div>
+
+    <script>
+      const input = document.querySelector(".input");
+      const btn = document.querySelector(".btn");
+
+      btn.addEventListener("click", () => {
+
+        if ("Notification" in window) {
+          // Verifica o estado atual da permissão
+          if (Notification.permission === "granted") {
+            console.log("Permissão já concedida!");
+          } else if (Notification.permission === "denied") {
+            console.log("Permissão foi negada anteriormente.");
+          } else {
+            // Solicita a permissão
+            Notification.requestPermission().then((permission) => {
+              if (permission === "granted") {
+                console.log("Permissão concedida!");
+                new Notification(input.value);
+              } else {
+                console.log("Permissão negada.");
+              }
+            });
+          }
+        } else {
+          console.log("API de Notificações não é suportada neste navegador.");
+        }
+      });
+    </script>
+  </body>
+</html>
